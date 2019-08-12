@@ -1,0 +1,21 @@
+import React, {Component} from 'react';
+import { GiftCard } from './';
+import { Typography } from "@material-ui/core";
+
+class Gift extends Component {
+
+    render = () => {
+        const item = this.props.data;
+
+        return <GiftCard image={item.images[0] ? item.images[0].url : ''}>
+            <Typography gutterBottom variant="h5" component="h2">
+                {item.title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+                {item.text}
+            </Typography>
+        </GiftCard>
+    }
+}
+
+export default Gift;
