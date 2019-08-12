@@ -3,8 +3,13 @@ import Query from './query';
 
 export default class SearchService {  
     
-    static search(type, text) {
-        const url = new Query().queryFor(type, text)
+    static searchGifts(text, page = 0) {
+        const url = new Query().queryFor(text, '/gifts', page)
+        return this.get(url);
+    }
+
+    static calculateSearchSize(text) {
+        const url = new Query().queryFor(text, '/gifts/size')
         return this.get(url);
     }
 
@@ -17,7 +22,7 @@ export default class SearchService {
     ).then(response => {
         return response;
     }).catch(error => {
-        return {};
+        return [];
     })
 
     static getHeaders() {

@@ -1,3 +1,5 @@
 export default { 
-    search: {}
+    search: [],
+    text: '',
+    searchSize: 0
 }

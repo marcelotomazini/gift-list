@@ -1,10 +1,10 @@
 export default class Query {  
     
-    queryFor = (text, page) => {
-        return this.endpoint() + '/gift_lists?page=' + page;
+    queryFor = (text, endpoint, page) => {
+        return this.url() + endpoint + '?text=' + text + '&page=' + page;
     }
 
-    endpoint = () => {
+    url = () => {
         return 'http://localhost:8080'
     }
 }

@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { search } from './search';
+import { search, saveSearchText as text, saveSearchSize as searchSize } from './search';
 
 export default combineReducers({
-    search
+    search,
+    text,
+    searchSize
 })

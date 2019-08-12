@@ -7,7 +7,7 @@ class Gift extends Component {
     render = () => {
         const item = this.props.data;
 
-        return <GiftCard image={item.images[0] ? item.images[0].url : ''}>
+        return <GiftCard image={item.image ? item.image.url : ''}>
             <Typography gutterBottom variant="h5" component="h2">
                 {item.title}
             </Typography>
