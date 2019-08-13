@@ -39,7 +39,7 @@ class SearchBar extends Component {
           <FormGroup row>
             <FormControlLabel
               control={
-                <Input id={'txtSearch'} placeholder="Your search" onChange={event => this.setState({ ...this.state, text: event.target.value})} />
+                <Input id={'txtSearch'} placeholder="Search your gifts" onChange={event => this.setState({ ...this.state, text: event.target.value})} />
               }
               style={{"padding-left": "30px"}}
             />

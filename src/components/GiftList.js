@@ -30,9 +30,9 @@ class GiftList extends Component {
                 
             </Grid>
             
-            <Pagination
+            {this.props.searchSize > 0 && <Pagination
                 page={this.state.page} total={this.props.searchSize} setPage={this.setPage}
-        />
+            />}
         </div>
     }
 }
