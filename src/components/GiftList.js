@@ -17,7 +17,6 @@ class GiftList extends Component {
     }
 
     render = () => {
-        
         return <div style={{flexGrow: "1"}} >
             <Grid
                 container
