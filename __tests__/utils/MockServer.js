@@ -20,7 +20,7 @@ class MockServer {
         this._requests = []
     }
 
-    start(port = 8080) {
+    start(port = 3001) {
         this._server = http.createServer((req, res) => {
             const mocks = this._mocks;
             const mock = mocks[[req.url, req.method]]

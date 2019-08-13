@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { GiftCard } from './';
-import { Typography } from "@material-ui/core";
+import { Typography, Checkbox } from "@material-ui/core";
 
 class Gift extends Component {
 
@@ -14,6 +14,7 @@ class Gift extends Component {
             <Typography variant="body2" color="textSecondary" component="p">
                 {item.text}
             </Typography>
+            <Checkbox />
         </GiftCard>
     }
 }

@@ -5,7 +5,8 @@ const mockServer = new MockServer()
 const browserHandler = new BrowserHandler();
 
 beforeAll(async () => {
-    mockServer.onGet('/gifts', gifts)
+    mockServer.onGet('/gifts?text=x&page=1', gifts)
+    mockServer.onGet('/gifts/size?text=x', 2)
     mockServer.start()
     await browserHandler.open()
 })
@@ -24,7 +25,11 @@ describe('Gift List',()=>{
         await page.type('#txtSearch', 'x')
         await page.click('#btnSearch');
 
-        expect(await getInnerText(page, '.MuiGrid-root')).toEqual('')
+        expect(await getInnerText(page, '.MuiGrid-root')).toEqual('odit\n\n'
+            + 'Tempore ad molestiae. Sit reprehenderit sunt. Perferendis sed quidem.\n\n'
+            + 'adipisci\n\n'
+            + 'Rerum eius unde. Quia error delectus. Tenetur vero rem.')
+        expect(await getInnerText(page, '.MuiButtonBase-root')).toEqual('SEARCH')
     }, 16000);
 
 });
@@ -37,6 +42,6 @@ function getInnerText(page, toSelect) {
 }
 
 const gifts = [
-  {"id":41,"title":"odit","text":"Tempore ad molestiae. Sit reprehenderit sunt. Perferendis sed quidem."},
-  {"id":40,"title":"adipisci","text":"Rerum eius unde. Quia error delectus. Tenetur vero rem."}
+    {"id":41,"title":"odit","text":"Tempore ad molestiae. Sit reprehenderit sunt. Perferendis sed quidem."},
+    {"id":40,"title":"adipisci","text":"Rerum eius unde. Quia error delectus. Tenetur vero rem."}
 ]

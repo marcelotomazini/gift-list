@@ -15,5 +15,6 @@ const server = new MockServer()
 
 server.onGet('/gift_lists?page=1', gift_lists)
 server.onGet('/gift_lists', gift_lists)
-server.onGet('/gifts?page=0', gifts)
-server.start(3001)
+server.onGet('/gifts?text=x&page=1', gifts)
+server.onGet('/gifts/size?text=x', 2)
+server.start()
